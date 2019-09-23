@@ -4,5 +4,5 @@ class Project(models.Model):
 
 	image = models.ImageField(upload_to='images/')
 	title = models.CharField(max_length=100)
-	description = models.CharField(max_length=300)
+	description = models.TextField()
 			
