@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ blog.title }}
+{% endblock %}
+
+{% block body %}
+<body>
+	
+		<div class="jumbotron">
+			<h3>Title</h3>
+			<h4 class="jumbotron-title text-muted">{{ blog.title }}</h4>
+			<hr/>
+			<center><img src="{{ blog.image.url }}" alt="No Image" class="img-responsive" width = "85%"height="500px" /></center>
+			<hr/>
+			<h3 >Description</h3>
+			<h4 class="text-muted">{{ blog.body }}</h4>
+			<hr/>
+			<h3>Published on</h3>
+			<h4 class="text-muted">{{ blog.pub_date }}</h4>
+			
+		</div>
+	
+{% endblock %}

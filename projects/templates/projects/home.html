@@ -1,71 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends 'base.html' %}
 
-	<meta charset="utf-8">
-    <title>Mahesh Keswani</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+{% block title %}
+  Mahesh Keswani
+{% endblock %}
+{% block body %}
 
-	<<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-</head>
-
-<header>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-  <!-- Brand -->
-  	<a class="navbar-brand" href="{% url 'home' %}">Mahesh Keswani</a>
-
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Twitter</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Resume</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Github</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-	
-</header>
-<body>
+{% load staticfiles %}
 	<div class="jumbotron text-center">
 			
 		<h2 class="jumbotron-heading">Mahesh Keswani</h2>
 		<p class="lead text-muted">Hey, My name is Mahesh Keswani and I love to make websites with django because I love to work with python.<br/> Python is awesome.</p>
 
 		<a href="mailto:2017.mahesh.keswani@ves.ac.in" class="btn btn-primary my-2"> Email Me</a>
+		<br/>
+		<img width="300" height="300px" src="{% static 'MaheshPic.jpg' %}" class="img-rounded" style="margin-top: 20px;" alt="No Image" />
 	</div>
 	
 
-
+	<a href = "{% url 'allprojects' %}" class="btn btn-info float-right">All Projects...</a>
+		
 	<div class="container" style="padding-left: 30px;">
-		{% for item in projects.all %}
+		{% for item in projects.all|slice:":3" %}
 		    {% if forloop.first %}
 		        <div class="row">
 		    {% endif %}
 		    <div class="three columns" style="padding-right: 70px;padding-bottom: 20px;">
 		    	<div class="card" style="width:300px;">
-  					<img class="card-img-top" src="{{ item.image.url }}" alt="No image">
+  					<img class="card-img-top" height="250px" src="{{ item.image.url }}" alt="No image">
 					<div class="card-body">
-						<h4 class="card-title">{{ item.title }}</h4>
-					    <a href="#" class="btn btn-success">See complete decsription</a>
+						<h4 class="card-title"><a href="{% url 'projectdetails' item.id %}">{{ item.title }}</a></h4>
+					    <a href="{% url 'projectdetails' item.id %}" class="btn btn-success">See complete decsription</a>
 					</div>
 				</div>
 		    </div>
@@ -79,17 +43,8 @@
 		         </div>
 		    {% endif %}
 		{% endfor %}
+
 			
 	</div>
-		
-		
-	
-</body>
-<footer class="text-muted" style="margin-bottom: 0%;">
-	<div class="container-fluid bg-dark" style="height: 100px">
-		
-		<p class="text-center">&copy; Mahesh Keswani {% now "Y" %}</p>
-		
-	</div>
-</footer>
-</html>
+
+{% endblock %}

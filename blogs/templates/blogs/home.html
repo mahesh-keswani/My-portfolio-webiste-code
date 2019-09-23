@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Blogs
+{% endblock %}
+{% block body %}
+  {% load staticfiles %}
+    <div class="container">
+        <h3 class="text-center text-info pt-4" style="font-family:Arial; ">Hey, These are the Mahesh's All Blogs Posts</h3>
+        <hr />
+
+        {% for blog in blogs.all %}
+          {% if forloop.first %}
+              <div class="row">
+          {% endif %}
+          <div class="three columns" style="padding-right: 70px;padding-bottom: 20px;">
+            <div class="card" style="width:300px;">
+              <img class="card-img-top" src="{{ blog.image.url }}" alt="No image">
+              <div class="card-body">
+                <h4 class="card-title"><a href ="{% url 'details' blog.id %}" >{{ blog.title }}</a></h4>
+                <p class="card-text">{{ blog.summarize_body }}</p>
+                <p class="text-muted">{{ blog.pub_date }}</p>
+                  <a href="{% url 'details' blog.id %}" class="btn btn-success">See complete decsription</a>
+              </div>
+           </div>
+        </div>
+        {% if forloop.counter|divisibleby:"3" %}
+            </div>
+            {% if not forloop.last %}
+                <div class="row">
+            {% endif %}
+        {% endif %}
+        {% if forloop.last %}
+             </div>
+        {% endif %}
+    {% endfor %}
+
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ project.title }}
+{% endblock %}
+{% block body %}
+
+{% load staticfiles %}
+	
+		<div class="jumbotron">
+			<h3>Title</h3>
+			<h4 class="jumbotron-title text-muted">{{ project.title }}</h4>
+			<hr/>
+			<center><img src="{{ project.image.url }}" alt="No Image" class="img-responsive" width = "85%"height="500px" /></center>
+			<hr/>
+			<h3>Description</h3>
+			<h4 class="text-muted">{{ project.description }}</h4>
+			
+		</div>
+{% endblock %}
