@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+	About
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-muted text-center">About Me!</h1>
+	<hr />
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<img  style="margin-top: 10px;" width="250" height="250px" src="{% static 'MaheshPic.jpg' %}" class="img-circle" style="margin-top: 20px;" alt="No Image" />
+			</div>
+
+			<div class="col-md-8">
+				<p class="text-info">What is your name and where are you from ?</p>
+				<p class="text-info">Where did you go to the school ?</p>
+				<p class="text-info">What languages do you like to use ?</p>
+				<p class="text-info">Where have you worked ? </p>
+				<p class="text-info">What are your intrests ? </p>
+				
+			</div>
+		</div>
+		<hr />
+		<div class="row">
+			<h4 class="text-muted">WHAT IS YOUR NAME AND WHERE ARE YOU FROM</h4>
+			<br />
+			<p>My name is Mahesh Keswani. I was born in Thane, Mumbai and grew up in a nearby town called Ulhasnagar
+			I have spent almost my whole 20 years here for school and college</p>
+		</div>
+		<hr/>
+		<div class="row">
+			<h4 class="text-muted">WHERE DID YOU GO TO THE SCHOOL</h4>
+			<br />
+			<p>I went to New Era High School in Ulhasnagar, Thane. I finished my last course in August 2019 and completed my B.E.S.E in <strong>Information Technology</strong> and a professional 1 month internship.</p>
+		</div>
+
+		<hr/>
+		<div class="row">
+			<h4 class="text-muted">WHAT LANGUAGES DO YOU LIKE TO USE</h4>
+			<br />
+			<p>I personally love Data Science due to which <strong>Python</strong> is my all time favourite language.
+			Apart from data science, for web development, I love the frameworks like Laravel and Django</p>
+		</div>
+
+
+		<hr/>
+		<div class="row">
+
+			<h4 class="text-muted">WHERE HAVE YOU WORKED</h4>
+			<br />
+			<p>I am now student at Vivekanand Engineering College pursuing my B.E. Degree.
+				So, currently I am not working :)</p>
+		</div>
+		<hr/>
+		<div class="row">
+			<h4 class="text-muted">WHAT ARE YOUR INTRESTS</h4>
+			<br />
+			<p>I love learning. The progress that online education has made in the past few years is exciting.
+			I like sports and numbers and the combination of two of them. Cricket and Carrom are my two favourites</p>
+		</div>
+		<hr/>
+		<p class="text-muted">If you want to know more about me, shoot me a message at one of the following links :)</p>
+
+		
+	
+	</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+

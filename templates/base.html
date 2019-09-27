@@ -36,11 +36,13 @@
       <li class="nav-item">
         <a class="nav-link" href="{% static 'MaheshResume.pdf' %}">Resume</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'showallblogs' %}">Blog</a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/mahesh-keswani">Github</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="">LinkedIn</a>
       </li>
     </ul>
   </div>
@@ -51,10 +53,51 @@
     {% endblock %}
 </body>
 
+   
 <footer class="text-muted" style="margin-bottom: 0%;position: relative;left: 0;bottom: 0;width: 100%;">
-  <div class="container-fluid bg-dark" style="height: 100px">
+  <div class="container-fluid bg-dark" style="height: all;">
     
-    <p class="text-center" style="color: white;padding-top: 30px;">&copy; Mahesh Keswani {% now "Y" %}</p>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center" >
+      
+      <ul class="navbar-nav" style="color: white;">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'showallblogs' %}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Contact</a>
+        </li>
+      </ul>
+
+    </nav>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark justify-content-center">
+      
+      <ul class="navbar-nav" style="color: white;">
+         <li class="nav-item">
+          <a class="ml-auto" href="mailto:2017.mahesh.keswani@ves.ac.in">
+            <img  src="{% static '83922.png' %}" width="50px" height="30px" style="padding-left: 10px;">
+        </a>
+        </li>
+        <li class="nav-item ml-auto">
+          <a class="ml-auto" href="https://github.com/mahesh-keswani">
+            <img style="padding-left: 10px;" src="{% static 'icons8-github-50.png' %}"  width="50px" height="30px">
+        </a>
+        </li>
+        <li class="nav-item ml-auto">
+          <a href="">
+            <img style="padding-left: 10px;" src="{% static 'icons8-twitter-64.png' %}"  width="50px" height="30px" >
+        </a>
+        </li>
+      </ul>
+
+    </nav>
+    
+    <p class="text-center mb-auto" style="color: white;padding-top: 30px;">&copy; Mahesh Keswani {% now "Y" %}. All Rights Reserved.</p>
     
   </div>
 </footer>

@@ -17,34 +17,123 @@
 	</div>
 	
 
-	<a href = "{% url 'allprojects' %}" class="btn btn-info float-right">All Projects...</a>
-		
 	<div class="container" style="padding-left: 30px;">
-		{% for item in projects.all|slice:":3" %}
-		    {% if forloop.first %}
-		        <div class="row">
-		    {% endif %}
-		    <div class="three columns" style="padding-right: 70px;padding-bottom: 20px;">
-		    	<div class="card" style="width:300px;">
-  					<img class="card-img-top" height="250px" src="{{ item.image.url }}" alt="No image">
-					<div class="card-body">
-						<h4 class="card-title"><a href="{% url 'projectdetails' item.id %}">{{ item.title }}</a></h4>
-					    <a href="{% url 'projectdetails' item.id %}" class="btn btn-success">See complete decsription</a>
-					</div>
-				</div>
-		    </div>
-		    {% if forloop.counter|divisibleby:"3" %}
-	        	</div>
-		        {% if not forloop.last %}
-		            <div class="row">
-		        {% endif %}
-	    	{% endif %}
-		    {% if forloop.last %}
-		         </div>
-		    {% endif %}
-		{% endfor %}
+		
+		<h2 class="text-muted">PERSONAL DETAILS</h2>
+		<hr/>
+		<p>
+			<i>In the informaion age, anyone can learn anything if they have passion and dedication.
+			</i>
+		</p>
 
-			
+		<br/>
+		<p>At the begining of 2018 I started teaching myself how to code in python.
+		Shortly thereafter, I started studying data-science and software-engineering.
+		My passion sustained me.
+		I spent many nights in front of the computer screen, studying coding tutorials and discussing on data science forums.
+		</p>			
+
+		<p>
+			I still treat every day as an oppurtunity to learn something new. I am also pursing B.E graduation at the Vivekanad Engineering college, Mumbai.
+			Over the next few months I will be interning as a data scientist. 
+		</p>
+
+		<hr/>
+
+		<h2 class="text-muted text-center" style="font-family: "Arial;"">Area of Intrests</h2>
+		<p class="text-center text-muted">Take a look at some of the things I love working on.</p>
+
+		<div class="container" style="padding-left: 50px;padding-right: 50px;padding-bottom: 15px;">
+			<div class="row">
+				<div class="column">
+					<center><img src="{% static 'Dataanalysis.png' %}" class="rounded" width="100" height="100"></center>
+					<h5 class="text-center">Data Analysis</h5>
+					<br />
+					<p>The first step in building amazing machine learning
+						<br/>
+						applications is collecting and understanding data.
+					</p>
+				</div>
+
+				<div class="column ml-auto">
+					<center><img src="{% static 'Nlp.png' %}" class="rounded" width="100" height="100"></center>
+					<h5 class="text-center">Natural Language Processing</h5>
+					<br/>
+					<p>
+						I build intelligent systems that uses text and <br/>
+						speech data to understand, describe and interact with people.
+					</p>
+				</div>
+			</div>
+
+			<div class="row mt-auto">
+				<div class="column">
+					<center><img src="{% static 'Ml.jpg' %}" class="rounded" width="200" height="100"></center>
+					<h5 class="text-center">Machine Learning</h5>
+					<br />
+					<p>
+						I have intermediate level of understanding of the theory, <br/>
+						implementation, and best practices that make machine <br/>learning applications successful.
+					</p>
+				</div>
+
+				<div class="column ml-auto">
+					<center><img src="{% static 'Maths.jpg' %}" class="rounded" width="100" height="100"></center>
+					<h5 class="text-center">Maths</h5>
+					<br/>
+					<p>
+						Math is one of my favourite subject because I like to solve<br/>
+						the problems.Also, Math is also used in real life world <br/> like some basic mathematical operations and even in future carrers <br/>
+						like engineering, architect and lot more. 
+					</p>
+				</div>
+			</div>
+			<div class="row mt-auto">
+				<div class="column">
+					<center><img src="{% static 'WebDevelopment.jpg' %}" class="rounded" width="200" height="100"></center>
+					<h5 class="text-center">Web Development</h5>
+					<br />
+					<p>
+						Web development is also one of my favourite area of intrest, <br/>
+						because it helps me in increasing my creativity, thinking from <br/>
+						others perspective, alot new tools are being developed <br/>
+						everyday which make the life of the developer easy.<br/>
+						It is one of the easy way to make money. :)
+					</p>
+				</div>
+
+				<div class="column ml-auto">
+					<center><img src="{% static 'Spark.png' %}" class="rounded" width="100" height="100"></center>
+					<h5 class="text-center">Apache Spark</h5>
+					<br/>
+					<p>
+						I am currently learning Apache Spark, beacause it's features <br/>are awesome. It's ability to process the data into main memory    attracted <br/> me towards it.<br/>So, I am currently learning it and hope will make some <br/> nice applications with it.
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
